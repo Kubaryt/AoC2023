@@ -1,24 +1,4 @@
-class Game:
-    id = int
-    games = list
-    def validate_game(self) -> int:
-        if self.games is None:
-            return 0
-        for game_table in self.games:
-            for item in game_table:
-                item = item.split(" ")
-                match item[1]:
-                    case "red":
-                        if int(item[0]) > 12:
-                            return 0
-                    case "green":
-                        if int(item[0]) > 13:
-                            return 0
-                    case "blue":
-                        if int(item[0]) > 14:
-                            return 0
-        return self.id
-
+from game_class import Game
 
 
 def get_games(file_name: str) -> list[Game]:
